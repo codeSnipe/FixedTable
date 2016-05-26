@@ -17,10 +17,13 @@
 设置锁定列，默认不锁定（0）
 #head
 列表头部配置信息：<br>
-[{headTitle:"a",dataField:"test1"},<br>
+[{headTitle:"a",dataField:"test1",width:200,tip:true,sort:true},<br>
 {headTitle:"b",dataField:"test2"},<br>
 {headTitle:"c",dataField:"test3"}
-]
+]<br>
+width:设置对应列的宽度.<br>
+tip设置当前列显示提示信息<br>
+sort设置是否支持过滤,当组件sort设置为true时可用.
 #data
 列表数据配置，按照head参数配置来设置对应数据
 [{a:"1",b:"2",c:"3"},<br>
