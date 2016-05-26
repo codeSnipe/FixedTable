@@ -1,0 +1,93 @@
+.table{background-color: #fff;padding: 0px;font-size: 12px;border-collapse: collapse;border-spacing: 0;}
+.table thead th,.table td{/*border:1px solid #dcdcdc*/;text-align:center;word-break: break-all;word-wrap: break-word;}
+.table td{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.table thead th{background:#f1f1f1;/* height:35px; line-height:35px;*/}/*2016.2.23*/
+.table td a{display:inline-block;}
+.table{width:100%;font-size: 12px;}
+.table th{white-space: nowrap;}
+.table th,.table td{padding:8px;line-height:18px;text-align:left;vertical-align:middle;border-top:1px solid #ddd}
+.table td input{text-align:center; background:none; width:100%; border:1px solid #f5f5f5;}
+.table td.td-num input{width:10%; vertical-align:text-bottom; margin-right:6px;}
+.table td select{text-align:center; background:none; width:100%; border:1px solid #f5f5f5;}
+.table th{font-weight:bold}
+.table thead th{vertical-align:bottom}
+.table caption+thead tr:first-child th,.table caption+thead tr:first-child td,.table colgroup+thead tr:first-child th,.table colgroup+thead tr:first-child td,.table thead:first-child tr:first-child th,.table thead:first-child tr:first-child td{border-top:0}
+.table tbody+tbody{border-top:2px solid #ddd}
+.table .table{background-color:#fff}
+.filterBtn{
+    background-color: #099ded;
+    border: 1px solid #099ded;
+    color: #fff;
+    margin-bottom: 10px;
+    height: 24px;
+    line-height: 24px;
+    display: inline-block;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    background-image: none;
+    filter: none;
+    padding: 0px 20px;
+    text-shadow: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    border-radius: 5px !important;
+    font-family: "微软雅黑","STHeiti",Arial;
+}
+
+.tbHead{
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-position: right;
+}
+.tbHead:hover{
+    text-decoration: underline;
+    color: #099ded;
+}
+.tbSortDisabled{
+    background-image: url("images/filterdisabled.png");
+}
+.tbSortUp{
+    background-image: url("images/filterup.png");
+}
+.tbSortDown{
+    background-image: url("images/filterdown.png");
+}
+.max { max-width: 200px; width:auto !important; width: 200px; }
+/*.table tbody tr:hover>td,.table tbody tr:hover>th{background-color:#f9fdff}*/
+.tableTopCheck{margin-left:10px;margin-right:10px; vertical-align:text-bottom;}
+/*表格-维度固定样式*/
+.table_fixed{border: 1px solid #dcdcdc; display: inline-block;background: #F1F1F1;
+    font-size: 12px;
+    width: 100%;
+}
+.table_fixed table td{}
+.table_fixed table  span{width:150px; overflow: hidden;display: block;text-overflow: ellipsis;white-space: nowrap; overflow: hidden; }
+.leftFixedCon{ max-height:400px;  float:left;background: #f1f1f1;}
+.leftFixedCon table  span{width: 50px;}
+.leftFixed{overflow-y:hidden; }
+.leftFixed table td{text-overflow: ellipsis;  white-space: nowrap;  overflow: hidden;padding: 8px; line-height: 18px;width:50px;text-align: center;  vertical-align: middle; border-right: 1px solid #dcdcdc; border-bottom: 1px solid #dcdcdc;background: #f1f1f1;}
+
+.rightFixedCon{height:100%; float:left;background: #f1f1f1 ;overflow-x: auto;overflow-y:hidden; }
+.rightFixed{margin-bottom: 1px;}
+.rightFixed table td{padding: 8px; border: none;border-right:1px solid #dcdcdc; border-bottom: 1px solid #dcdcdc; height:18px; text-align:center; background-color: #f1f1f1 !important;}
+.rightTable{max-height: 100%;display: inline-block; background:#fff; overflow-y: auto; overflow-x: hidden;}
+/*.rightTable table{width:auto; }*/
+.rightTable table td{ border-right:1px solid #dcdcdc; text-align:center;height: 18px;line-height: 18px;border-bottom:1px solid #ddd;border-top:none; }
+.rightTableTop table td{}
+.fixedHeadColor{
+    background: rgb(241, 241, 241);
+}
+.fixedHeadColor:hover{
+    background: rgb(241, 241, 241)!important;
+}
+/*过滤头样式*/
+.checkCon{ border: 1px solid #dedede; padding: 5px; margin: 5px 0 10px 0;}
+.checkAll{ height: 30px; line-height: 30px;}
+.checkAll .btn{height: 25px;line-height: 25px; }
+.checkChoose{ display: inline-block;}
+.checkChoose li{ margin: 0 10px; display: inline-block; float: left;}

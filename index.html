@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="app/release/fixedtable.css">
+</head>
+<body>
+<div id="fixedtable" style="width: 100%;height: 500px;"></div>
+<span>支持过滤列</span><input type="checkbox" id="filterLine">
+<span>锁定行数</span><input type="number" id="row" value="1">
+<span>锁定列数</span><input type="number" id="line" value="1">
+<span>最大高度</span><input type="number" id="maxheight" value="300">
+<input id="refreshTable" type="button" value="刷新Table">
+
+</body>
+
+<script src="app/release/jquery.min.js"></script>
+<script src="app/release/fixedtable.min.js"></script>
+<script>
+    $(function(){
+        var headerTitle = [
+            {headTitle:"排名",dataField:"pm",width:100,tip:true,sort:true},
+            {headTitle:"姓名",dataField:"name",width:200},
+            {headTitle:"业绩",dataField:"yj"},
+            {headTitle:"已报备",dataField:"baobei"},
+            {headTitle:"测试1",dataField:"test1"},
+            {headTitle:"测试2",dataField:"test2"},
+            {headTitle:"测试3",dataField:"test3"},
+            {headTitle:"测试4",dataField:"test4"},
+            {headTitle:"测试5",dataField:"test5"},
+            {headTitle:"测试6",dataField:"test6"},
+            {headTitle:"测试7",dataField:"test7"},
+            {headTitle:"测试8",dataField:"test8"},
+            {headTitle:"测试9",dataField:"test9"},
+            {headTitle:"测试10",dataField:"test10"},
+            {headTitle:"测试11",dataField:"test11"}
+        ];
+        var data = [
+            {pm:"1",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"2",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"3",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"4",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"5",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"6",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"7",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"8",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"9",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"10",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"11",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"12",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"13",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"14",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"15",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"16",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"17",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"18",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"19",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"},
+            {pm:"20",name:"1",yj:"2",baobei:"3",test1:"test1",test2:"test2",test3:"test3",test4:"test4",test5:"test5",test6:"test6",test7:"test7",test8:"test8",test9:"test9",test10:"test10",test11:"test11"}
+        ];
+        $("#refreshTable").on("click",function(){
+            var filter = $("#filterLine").prop("checked");
+            var row = $("#row").val();
+            var line = $("#line").val();
+            var maxHeight = $("#maxheight").val();
+            $("#fixedtable").fixedTable({
+                hasFilterHead:filter,
+                data:data,
+                head:headerTitle,
+                lockRow:row,
+                lockLine:line,
+                maxHeight:maxHeight,
+                sortFunction:sortFunction
+            });
+        });
+        function sortFunction(data){
+        }
+    })
+</script>
+</html>
