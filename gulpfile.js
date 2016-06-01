@@ -19,7 +19,7 @@ gulp.task('uglify',function(){
        .pipe(gulp.dest("app/release"));
 });
 gulp.task('cssmin',function(){
-   return gulp.src('app/develop/*.css')
+   return gulp.src('app/develop/*/*.css')
        .pipe(cssmin())
        .pipe(rename(function(path){
            path.extname = ".min.css";
@@ -27,7 +27,7 @@ gulp.task('cssmin',function(){
        .pipe(gulp.dest('app/release'));
 });
 gulp.task('imagemin',function(){
-    return gulp.src("app/develop/images/*.png")
+    return gulp.src("app/develop/*/*.png")
         .pipe(imagemin())
-        .pipe(gulp.dest('app/release/images'));
+        .pipe(gulp.dest('app/release/'));
 });
