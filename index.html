@@ -13,7 +13,9 @@
 <span>锁定列数</span><input type="number" id="line" value="1">
 <span>最大高度</span><input type="number" id="maxheight" value="300">
 <input id="refreshTable" type="button" value="刷新Table">
-
+<div style="margin-top: 20px;">    
+    <textarea id="configText" style="width: 600px;height: 300px;resize: none;"></textarea> 
+</div>
 </body>
 
 <script src="app/release/jquery.min.js"></script>
@@ -22,7 +24,9 @@
 <script>
     $(function(){
         var headerTitle = [
-            {headTitle:"排名",dataField:"pm",width:100,tip:true,sort:true},
+            {headTitle:"排名",dataField:"pm",width:100,tip:true,sort:true}
+        ]
+
             {headTitle:"姓名",dataField:"name",width:200},
             {headTitle:"业绩",dataField:"yj"},
             {headTitle:"已报备",dataField:"baobei"},
@@ -74,6 +78,16 @@
                 maxHeight:maxHeight,
                 sortFunction:sortFunction
             });
+            var config = `("#fixedtable").fixedTable({
+                hasFilterHead:`+filter+`,
+                data:data,
+                head:headerTitle,
+                lockRow:`+row+`,
+                lockLine:`+line+`,
+                maxHeight:`+maxHeight+`,
+                sortFunction:`+sortFunction+`
+            });`;
+            $("#configText").val(config);
         });
         function sortFunction(data){
         }
